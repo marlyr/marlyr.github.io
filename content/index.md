@@ -1,6 +1,6 @@
 # Marly Rubin
 
-![Marly Rubin](/images/me.jpeg)
+![Marly Rubin](images/me.jpeg)
 
 Welcome to my personal website!
 
