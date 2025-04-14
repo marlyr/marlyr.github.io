@@ -18,6 +18,20 @@ class HTMLNode:
         return f"HTMLNode(tag={self.tag}, value={self.value}, children={self.children}, props={self.props})"
 
 
+class ParentNode(HTMLNode):
+    def __init__(self, tag, children, props=None):
+        super().__init__(tag=tag, children=children, props=props)
+
+    def to_html(self):
+        if self.tag is None:
+            raise ValueError("Tag was not provided")
+        if self.children is None:
+            raise ValueError("Children were not provided")
+        
+        child_nodes = [child.to_html() for child in self.children]
+        return f"<{self.tag}>{''.join(child_nodes)}</{self.tag}>"
+
+
 class LeafNode(HTMLNode):
     def __init__(self, tag=None, value=None, props=None):
         super().__init__(tag=tag, value=value, props=props)
@@ -31,19 +45,3 @@ class LeafNode(HTMLNode):
             props_html = self.props_to_html()
             return f"<{self.tag} {props_html}>{self.value}</{self.tag}>"
         return f"<{self.tag}>{self.value}</{self.tag}>"
-    
-
-class ParentNode(HTMLNode):
-    def __init__(self, tag, children, props=None):
-        super().__init__(tag=tag, children=children, props=props)
-
-    def to_html(self):
-        if self.tag is None:
-            raise ValueError("Tag was not provided")
-        if self.children is None:
-            raise ValueError("Children were not provided")
-        
-        child_nodes = []
-        for child in self.children:
-            child_nodes.append(child.to_html())
-        return f"<{self.tag}>{''.join(child_nodes)}</{self.tag}>"

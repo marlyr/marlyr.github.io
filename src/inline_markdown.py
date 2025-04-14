@@ -19,8 +19,10 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
 
         while delimiter in remaining_text:
             start_idx = remaining_text.find(delimiter)
+
             if start_idx > 0:
                 new_nodes.append(TextNode(remaining_text[:start_idx], TextType.TEXT))
+
             content_start = start_idx + len(delimiter)
             end_idx = remaining_text.find(delimiter, content_start)
             if end_idx == -1:
@@ -66,7 +68,7 @@ def split_nodes_url(node, type):
             before, after = text.split(pattern, maxsplit=1)
             if before:
                 parts.append(TextNode(before, TextType.TEXT))
-            parts.append(TextNode(link_text, type, url=url))
+            parts.append(TextNode(link_text, type, url))
             text = after
         
         if text:
@@ -96,10 +98,13 @@ def split_nodes_link(old_nodes):
 def text_to_textnodes(text):
     nodes = [TextNode(text, TextType.TEXT)]
 
+    nodes = split_nodes_link(nodes)
+    nodes = split_nodes_image(nodes)
+
     nodes = split_nodes_delimiter(nodes, '`', TextType.CODE)
     nodes = split_nodes_delimiter(nodes, '**', TextType.BOLD)
     nodes = split_nodes_delimiter(nodes, '_', TextType.ITALIC)
-    nodes = split_nodes_link(nodes)
-    nodes = split_nodes_image(nodes)
+    
     return nodes
+
 
