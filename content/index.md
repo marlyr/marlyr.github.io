@@ -6,17 +6,16 @@ Welcome to my personal website!
 
 ## About Me
 
-I am currently a postbac researcher at the NIMH working in the Section on Functional Imaging Methods. I'm interested in software development
+I am a postbac researcher at the NIH in the NIMH/Section on Functional Imaging Methods. I'm interested in software development
 for research.
 
-- **Hobbies**: Figure skating, drawing, and coding.
+In my free time, I enjoy figure skating, drawing, and coding.
 
 ## Skills
 
 - Python
 - Bash
-- NumPy, pandas, scikit-learn  
-- nibabel, Nilearn  
+- NumPy, pandas, scikit-learn, nibabel, Nilearn, etc.
 
 ## Contact
 
