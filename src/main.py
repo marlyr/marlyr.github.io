@@ -6,13 +6,21 @@ import shutil
 from markdown_utils import extract_title
 from markdown_to_html import markdown_to_html_node
 
-basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
-
 current_dir = osp.dirname(os.path.abspath(__file__))
 STATIC_DIR = osp.join(current_dir, "../static/")
 DOCS_DIR = osp.join(current_dir, "../docs/")
 CONTENT_DIR = osp.join(current_dir, "../content/")
 TEMPLATE_PATH = osp.join(current_dir, "../template.html")
+
+def set_basepath():
+    if len(sys.argv) > 1:
+        basepath = sys.argv[1]
+        if not basepath.startswith('/'):
+            basepath = '/' + basepath
+        if not basepath.endswith('/'):
+            basepath += '/'
+        return basepath
+    return "/"
 
 def copy_static(src, dst):
     if not os.listdir(src):
@@ -67,6 +75,7 @@ def generate_page(full_path, dest_dir_path, template_path, basepath):
         f.write(template)
 
 if __name__=="__main__":
+    basepath = set_basepath()
     print(f"++ Creating new public directory at {DOCS_DIR}")
     if os.path.exists(DOCS_DIR):
         shutil.rmtree(DOCS_DIR)
