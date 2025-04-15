@@ -54,12 +54,12 @@ Then, visit http://localhost:8888 in your browser.
 - Your site will be live at https://YOUR_USERNAME.github.io/.
 
 
-> Note: if you decided to name your repo something else other than `YOUR_USERNAME.github.io`, then run:
->
->  ```bash
+> [!NOTE]
+> If you decided to name your repo something else other than `YOUR_USERNAME.github.io`, then build your site by running this instead:
+> ```bash
 > python3 src/main.py "/YOUR_REPO_NAME/"
 > ```
->  This will adjust the paths for your custom repository name.
+> This will adjust the paths for your custom repository name.
 
 ## Further customization
 
