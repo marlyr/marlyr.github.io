@@ -1,6 +1,8 @@
 # static-site-generator
 
-Welcome to my personal website repo! This website was generated using a custom-built [static site generator](https://www.boot.dev/courses/build-static-site-generator-python) from the course on [Boot.dev](https://www.boot.dev).
+Welcome to my personal website repo! You can find it at https://marlyr.github.io/.
+
+This website was generated using a custom-built [static site generator](https://www.boot.dev/courses/build-static-site-generator-python) from the course on [Boot.dev](https://www.boot.dev).
 
 ## Features
 
