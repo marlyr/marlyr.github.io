@@ -6,16 +6,17 @@ Welcome to my personal website!
 
 ## About Me
 
-I am a postbac researcher at the NIH in the NIMH/Section on Functional Imaging Methods. I'm interested in software development
-for research.
+I am a postbac researcher at the NIH in the NIMH/Section on Functional Imaging Methods.
+My work involves neuroimaging analysis and developing software for real-time fMRI processing. 
+I'm interested in building tools to support scientific research.
 
-In my free time, I enjoy figure skating, drawing, and coding.
+In my free time, I enjoy figure skating, playing guitar, and coding.
 
 ## Skills
 
-- Python
-- Bash
-- NumPy, pandas, scikit-learn, nibabel, Nilearn, etc.
+- Python (NumPy, pandas, scikit-learn, nibabel, Nilearn, etc.)
+- Bash, Linux, HPC
+- Currently learning: React, TypeScript, PostgreSQL
 
 ## Contact
 
@@ -24,9 +25,6 @@ In my free time, I enjoy figure skating, drawing, and coding.
 </a> |
 <a href="https://www.linkedin.com/in/marly-rubin-85043022b">
   <i class="fab fa-linkedin"></i> LinkedIn
-</a> |
-<a href="mailto:marlyr637@gmail.com">
-  <i class="fas fa-envelope"></i> Email
 </a>
 
 ---
