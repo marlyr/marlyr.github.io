@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <nav class="subnav">
+      <a href="/index.html">home</a>
+      <a href="/projects/index.html">projects</a>
+    </nav>
     <article>{{ Content }}</article>
+    <script>
+      document.querySelectorAll('.subnav a').forEach(a => {
+        if (a.href === location.href) a.style.fontWeight = 'bold';
+      });
+    </script>
   </body>
 </html>
