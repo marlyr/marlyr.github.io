@@ -8,6 +8,7 @@ class BlockType(Enum):
     QUOTE = "quote"
     UNORDERED_LIST = "unordered_list"
     ORDERED_LIST = "ordered_list"
+    HTML = "html"
 
 
 def markdown_to_blocks(markdown):
@@ -15,6 +16,9 @@ def markdown_to_blocks(markdown):
 
 
 def block_to_block_type(block):
+    if re.match(r"^<[a-zA-Z/]", block):
+        return BlockType.HTML
+
     if re.match(r"^#{1,6} ", block):
         return BlockType.HEADING
     

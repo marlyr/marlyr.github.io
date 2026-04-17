@@ -1,11 +1,12 @@
 import re
 
-from htmlnode import ParentNode
+from htmlnode import ParentNode, LeafNode
 from block_markdown import BlockType
 from block_markdown import markdown_to_blocks, block_to_block_type
 from inline_markdown import text_to_textnodes
 from textnode import TextNode, TextType
 from textnode import text_node_to_html_node
+
 
 def markdown_to_html_node(markdown):
     blocks = markdown_to_blocks(markdown)
@@ -13,9 +14,13 @@ def markdown_to_html_node(markdown):
 
     for block in blocks:
         block_type = block_to_block_type(block)
-        
+
+        if block_type == BlockType.HTML:
+            block_nodes.append(LeafNode(None, block))
+            continue
+
         tag = block_type_to_tag(block_type, block)
-        
+
         if block_type == BlockType.PARAGRAPH:
             block = block.replace("\n", " ")
 
@@ -79,7 +84,6 @@ def text_to_children(text):
     return children
 
 
-
 def heading_to_nodes(block):
     nodes = []
 
@@ -103,6 +107,7 @@ def code_to_node(block):
     node = TextNode(code_content, TextType.CODE)
     html_node = text_node_to_html_node(node)
     return ParentNode("pre", [html_node])
+
 
 def list_to_node(block, tag):
     children = []
@@ -129,11 +134,3 @@ def unordered_list_to_node(block):
 
 def ordered_list_to_node(block):
     return list_to_node(block, "ol")
-
-
-txt = """
-## The Art of **World-Building**
-"""
-
-node = markdown_to_html_node(txt)
-html = node.to_html()
