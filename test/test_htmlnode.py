@@ -1,5 +1,7 @@
 import unittest
+import sys
 
+sys.path.append("..")
 from htmlnode import HTMLNode, LeafNode, ParentNode
 
 

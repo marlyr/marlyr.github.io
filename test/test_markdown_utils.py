@@ -1,5 +1,7 @@
 import unittest
+import sys
 
+sys.path.append("..")
 from markdown_utils import extract_title
 
 class TestExtractTitle(unittest.TestCase):
