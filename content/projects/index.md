@@ -6,6 +6,6 @@ Real-time fMRI software that receives incoming data from the scanner, performs o
 
 ### [↗ spiral](https://github.com/marlyr/spiral)
 
-A figure skating practice tracker for logging jumps, spins, and progress over time.
+A figure skating skill tracker for tracking your progress through Learn to Skate levels. Coming soon: log your practices and see your trends over time.
 
 Stack: React/TypeScript, Python/FastAPI
