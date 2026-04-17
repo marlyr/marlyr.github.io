@@ -139,3 +139,15 @@ class TestBlockToBlockType(unittest.TestCase):
 
     def test_not_html_comparison_operator(self):
         self.assertEqual(block_to_block_type("<= some comparison"), BlockType.PARAGRAPH)
+
+    def test_hr(self):
+        self.assertEqual(block_to_block_type("---"), BlockType.HR)
+
+    def test_hr_longer(self):
+        self.assertEqual(block_to_block_type("------"), BlockType.HR)
+
+    def test_hr_not_unordered_list(self):
+        self.assertEqual(block_to_block_type("--"), BlockType.PARAGRAPH)
+
+    def test_hr_not_with_text(self):
+        self.assertEqual(block_to_block_type("--- not an hr"), BlockType.PARAGRAPH)

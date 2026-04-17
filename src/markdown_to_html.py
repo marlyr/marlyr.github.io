@@ -19,6 +19,10 @@ def markdown_to_html_node(markdown):
             block_nodes.append(LeafNode(None, block))
             continue
 
+        if block_type == BlockType.HR:
+            block_nodes.append(LeafNode(None, "<hr>"))
+            continue
+
         tag = block_type_to_tag(block_type, block)
 
         if block_type == BlockType.PARAGRAPH:

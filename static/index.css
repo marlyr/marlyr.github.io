@@ -77,6 +77,12 @@ pre {
   overflow: auto;
 }
 
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 24px 0;
+}
+
 blockquote {
   background-color: #ffeff6;
   border-left: 4px solid #8d99ae;

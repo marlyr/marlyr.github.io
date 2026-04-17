@@ -67,4 +67,4 @@ Then, visit http://localhost:8888 in your browser.
 
 - Edit `template.html` to change the layout. This is also where site-wide elements like navigation live — anything in `template.html` appears on every generated page automatically.
 - Edit `static/index.css` to update the styling.
-- You can write raw HTML inline in markdown files as an escape hatch for things the generator doesn't support (e.g. interactive elements, custom divs). **Note:** the generator wraps unrecognized blocks in `<p>` tags, so raw HTML blocks like `<div>` will be rendered as `<p><div>...</div></p>`. This is technically invalid HTML but browsers handle it gracefully.
+- You can write raw HTML blocks in markdown files as an escape hatch for things the generator doesn't support (e.g. interactive elements, custom divs). Any block starting with an HTML tag (`<div>`, `<script>`, etc.) is passed through as-is. Use `---` for a horizontal rule.

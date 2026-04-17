@@ -175,6 +175,19 @@ Here is a paragraph after the list.
             html,
             '<div><h1>Heading</h1><p>Here is a paragraph with <code>inline</code> code.</p><blockquote>This is a blockquote with some <b>bold</b> and <i>italic</i> text inside it.</blockquote><ol><li>First ordered list item</li><li>Second ordered list item</li></ol><p>Here is a paragraph after the list.</p><p><img src="image_url" alt="Alt text"></img></p><p><a href="https://example.com">Link Text</a></p></div>'
         )
+    def test_hr(self):
+        md = """
+Some text above
+
+---
+
+Some text below
+"""
+        node = markdown_to_html_node(md)
+        html = node.to_html()
+        self.assertIn("<hr>", html)
+        self.assertNotIn("<p>---</p>", html)
+
     def test_raw_html_passthrough(self):
         md = """
 ## Projects
