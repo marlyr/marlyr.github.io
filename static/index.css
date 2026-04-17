@@ -142,3 +142,96 @@ img {
   color: #d8697e;
   border-color: #d8697e;
 }
+
+.art-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+
+.art-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #be3f57;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.85em;
+  padding: 0;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.art-toggle-btn:hover,
+.art-toggle-btn.active {
+  opacity: 1;
+}
+
+.art-toggle-btn img {
+  width: 36px;
+  height: 36px;
+}
+
+.art-grid {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.art-grid.active {
+  display: grid;
+}
+
+.art-thumb {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.art-thumb img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #c4a09a;
+  background: #ede5d4;
+  border-radius: 0;
+  max-width: none;
+  height: auto;
+}
+
+.art-caption {
+  font-size: 0.78em;
+  color: #666;
+  text-align: center;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  height: auto;
+  width: auto;
+}

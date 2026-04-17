@@ -33,7 +33,7 @@ def copy_static(src, dst):
             print(f"++ Copying {content} to {dst}")
             shutil.copy(full_path, dst)
         else:
-            target_dir = osp.join(DOCS_DIR, content)
+            target_dir = osp.join(dst, content)
             os.makedirs(target_dir, exist_ok=True)
             copy_static(full_path, target_dir)
 
