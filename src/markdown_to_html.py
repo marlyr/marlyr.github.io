@@ -130,11 +130,3 @@ def list_to_node(block, tag):
         children.append(ParentNode("li", inline_nodes))
 
     return ParentNode(tag, children)
-
-
-def unordered_list_to_node(block):
-    return list_to_node(block, "ul")
-
-
-def ordered_list_to_node(block):
-    return list_to_node(block, "ol")

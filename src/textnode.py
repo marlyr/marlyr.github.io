@@ -18,7 +18,7 @@ class TextNode:
         return vars(self) == vars(other)
     def __repr__(self):
         if self.url:
-            return f'TextNode("{self.text}", TextType.{self.text_type.value}, {self.url}))'
+            return f'TextNode("{self.text}", TextType.{self.text_type.value}, {self.url})'
         return f'TextNode("{self.text}", TextType.{self.text_type.value.upper()})'
     
 

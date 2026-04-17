@@ -45,30 +45,30 @@ def extract_markdown_links(text):
     return re.findall(r"(?<!!)\[([^\[\]]*)\]\(([^\(\)]*)\)", text)
 
 
-def split_nodes_url(node, type):
+def split_nodes_url(node, node_type):
     new_nodes = []
     if node.text_type == TextType.TEXT:
         text = node.text
         parts = []
 
-        if type == TextType.IMAGE:
+        if node_type == TextType.IMAGE:
             matches = extract_markdown_images(text)
-        elif type == TextType.LINK:
+        elif node_type == TextType.LINK:
             matches = extract_markdown_links(text)
 
         if not matches:
             new_nodes.append(node)
             return new_nodes
-        
+
         for link_text, url in matches:
-            if type == TextType.IMAGE:
+            if node_type == TextType.IMAGE:
                 pattern = f'![{link_text}]({url})'
-            elif type == TextType.LINK:
+            elif node_type == TextType.LINK:
                 pattern = f'[{link_text}]({url})'
             before, after = text.split(pattern, maxsplit=1)
             if before:
                 parts.append(TextNode(before, TextType.TEXT))
-            parts.append(TextNode(link_text, type, url))
+            parts.append(TextNode(link_text, node_type, url))
             text = after
         
         if text:
@@ -93,6 +93,7 @@ def split_nodes_link(old_nodes):
     for node in old_nodes:
         new_nodes.extend(split_nodes_url(node, TextType.LINK))
     return new_nodes
+
 
 
 def text_to_textnodes(text):
