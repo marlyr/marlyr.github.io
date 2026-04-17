@@ -51,7 +51,7 @@ def generate_pages_recursive(content_path, template_path, dest_dir_path, basepat
         elif osp.isdir(full_path):
             new_dest_dir_path = osp.join(dest_dir_path, content)
             os.makedirs(new_dest_dir_path, exist_ok=True)
-            generate_pages_recursive(full_path, template_path, new_dest_dir_path)
+            generate_pages_recursive(full_path, template_path, new_dest_dir_path, basepath)
     
 
 def generate_page(full_path, dest_dir_path, template_path, basepath):

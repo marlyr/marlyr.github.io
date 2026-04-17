@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects</title>
+    <link href="/index.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="subnav">
+      <a href="/index.html">home</a>
+      <a href="/projects/index.html">projects</a>
+    </nav>
+    <article><div><h1>Projects</h1><h3><a href="https://github.com/nimh-sfim/rtcog">↗ rtcog</a></h3><p>Real-time fMRI software that receives incoming data from the scanner, performs on-the-fly preprocessing, and collects surveys from subjects at key moments of activity.</p><h3><a href="https://github.com/marlyr/spiral">↗ spiral</a></h3><p>A figure skating practice tracker for logging jumps, spins, and progress over time.</p><p>Stack: React/TypeScript, Python/FastAPI</p></div></article>
+    <script>
+      document.querySelectorAll('.subnav a').forEach(a => {
+        if (a.href === location.href) a.style.fontWeight = 'bold';
+      });
+    </script>
+  </body>
+</html>
